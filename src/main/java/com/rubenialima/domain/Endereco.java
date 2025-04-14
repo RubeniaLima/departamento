@@ -34,7 +34,7 @@ public class Endereco extends AbstractEntity<Long> {
 
 	
 	
-	
+
 	public String getLogradouro() {
 		return logradouro;
 	}
