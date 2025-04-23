@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @SuppressWarnings("serial")
@@ -28,7 +29,7 @@ public class Funcionario extends AbstractEntity<Long> {
 	@Column(name = "data_saida", columnDefinition = "DATE")
 	private LocalDate dataSaida;
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="endereco_id_fk")
 	private Endereco endereco;
 	
