@@ -41,4 +41,10 @@ public class DepartamentoController {
 		model.addAttribute("departamento", service.buscarPorId(id));
 		return "/departamento/cadastro";
 	}
+	
+	@PostMapping("/editar")
+	public String editar(Departamento departamento) {
+		service.editar(departamento);
+		return "redirect:/departamentos/cadastrar";
+	}
 }
