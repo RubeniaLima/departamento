@@ -12,6 +12,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.rubenialima.domain.Cargo;
 import com.rubenialima.domain.Funcionario;
+import com.rubenialima.domain.UF;
 import com.rubenialima.service.CargoService;
 import com.rubenialima.service.FuncionarioService;
 
@@ -46,6 +47,11 @@ public class FuncionarioController {
 	public List<Cargo> getCargos(){
 		return cargoService.buscarTodos();
 		
+	}
+	
+	@ModelAttribute("ufs")
+	public UF[] getUFs() {
+		return UF.values();
 	}
 
 }
