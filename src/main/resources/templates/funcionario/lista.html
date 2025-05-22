@@ -53,8 +53,9 @@
 	                    <div class="collapse" id="collapseCargo">
 	
 	                        <nav class="navbar navbar-light bg-light">
-	                            <form class="form-inline" method="GET" action="/funcionarios/buscar/cargo">
-	                                <select class="form-control mr-sm-2" name="cargo" aria-label="Search">
+	                            <form class="form-inline" method="GET" th:action="@{/funcionarios/buscar/cargo}">
+	                                <select class="form-control mr-sm-2" th:name="id" aria-label="Search">
+										<option th:each="c:${cargos}" th:value="${c.id}" th:text="${c.nome}"></option>
 	                                    
 	                                </select>
 	                                <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
@@ -85,7 +86,7 @@
 	
 	            <div class="table-responsive">
 					
-					<div th:replace="fragments/alert"></div>
+					<div th:replace="~{fragments/alert}"></div>
 					
 	                <table class="table table-striped table-hover table-sm">
 	                    <thead>
