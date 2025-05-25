@@ -19,7 +19,7 @@ import jakarta.validation.constraints.*;
 public class Cargo extends AbstractEntity<Long> {
 
 	@NotBlank(message = "O nome do cargo é obrigatório. ")
-	@Size(max = 60, message = "O nome do cargo deve conter no máximo 60 caracteres. ")
+	@Size(min =3, max = 60, message = "O nome do cargo deve conter no máximo 60 caracteres. ")
 	@Column(nullable = false, unique = true, length = 60)
 	private String nome;
 	
