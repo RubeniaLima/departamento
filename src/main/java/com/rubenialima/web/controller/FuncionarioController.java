@@ -47,7 +47,7 @@ public class FuncionarioController {
 	}
 	
 	@PostMapping("/salvar")
-	public String salvar(@Valid Funcionario funcionario,BindingResult result  ,RedirectAttributes attr) {
+	public String salvar(@Valid Funcionario funcionario, BindingResult result, RedirectAttributes attr) {
 		
 		if(result.hasErrors()) {
 			return "/funcionario/cadastro";
@@ -73,7 +73,7 @@ public class FuncionarioController {
 		}
 		funcionarioService.editar(funcionario);
 		attr.addAttribute("success", "Funcionario editado com sucesso.");
-		return "redirect:/funcionarios/listar";
+		return "redirect:/funcionarios/cadastrar";
 	}
 	
 	@GetMapping("/excluir/{id}")

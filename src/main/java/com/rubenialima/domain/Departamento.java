@@ -15,7 +15,7 @@ import jakarta.validation.constraints.Size;
 public class Departamento extends AbstractEntity<Long>{
 
 	@NotBlank(message = "Informe um nome. ")
-	@Size(min=3, max = 60, message = "O nome do departamento deve ter entre{min} e {max} caracteres. ")
+	@Size(min=3, max = 60, message = "O nome do departamento deve ter entre {min} e {max} caracteres. ")
 	@Column(nullable = false, unique = true, length = 60)
 	private String nome;
 	
