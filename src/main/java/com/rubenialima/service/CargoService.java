@@ -3,6 +3,7 @@ package com.rubenialima.service;
 import java.util.List;
 
 import com.rubenialima.domain.Cargo;
+import com.rubenialima.util.PaginacaoUtil;
 
 public interface CargoService {
 
@@ -17,4 +18,6 @@ public interface CargoService {
 	List<Cargo> buscarTodos();
 
 	boolean cargoTemFuncionarios(Long id);
+
+	PaginacaoUtil<Cargo> buscarPorPagina(int pagina);
 }

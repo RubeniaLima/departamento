@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.rubenialima.dao.CargoDao;
 import com.rubenialima.domain.Cargo;
+import com.rubenialima.util.PaginacaoUtil;
 
 
 
@@ -56,6 +57,12 @@ public class CargoServiceImpl implements CargoService{
 			return false;
 		}
 		return true;
+	}
+
+	@Override
+	public PaginacaoUtil<Cargo> buscarPorPagina(int pagina) {
+		
+		return dao.buscaPaginada(pagina);
 	}
 	
 	

@@ -5,16 +5,21 @@ import java.util.List;
 public class PaginacaoUtil<T> {
 	private int tamanho;
 	private int pagina;
-	private int totalPaginas;
+	private long totalDePaginas;
 	private List<T> registro;
 	
 	
-	public PaginacaoUtil(int tamanho, int pagina, int totalPaginas, List<T> registro) {
+	public PaginacaoUtil(int tamanho, int pagina, long totalDePaginas, List<T> registro) {
 		super();
 		this.tamanho = tamanho;
 		this.pagina = pagina;
-		this.totalPaginas = totalPaginas;
+		this.totalDePaginas = totalDePaginas;
 		this.registro = registro;
+	}
+
+
+	public PaginacaoUtil() {
+		super();
 	}
 
 
@@ -23,12 +28,28 @@ public class PaginacaoUtil<T> {
 	}
 
 
+	public void setTamanho(int tamanho) {
+		this.tamanho = tamanho;
+	}
+
+
 	public int getPagina() {
 		return pagina;
 	}
 
-	public int getTotalPaginas() {
-		return totalPaginas;
+
+	public void setPagina(int pagina) {
+		this.pagina = pagina;
+	}
+
+
+	public long getTotalDePaginas() {
+		return totalDePaginas;
+	}
+
+
+	public void setTotalDePaginas(int totalDePaginas) {
+		this.totalDePaginas = totalDePaginas;
 	}
 
 
@@ -36,5 +57,12 @@ public class PaginacaoUtil<T> {
 		return registro;
 	}
 
+
+	public void setRegistro(List<T> registro) {
+		this.registro = registro;
+	}
+	
+	
+	
 
 }
